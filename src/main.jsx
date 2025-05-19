@@ -6,10 +6,15 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router";
+import Mainlayout from './Layout/Mainlayout';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div>Hello World</div>,
+    Component:Mainlayout,
+    errorElement:<h1>Error Occured! :(</h1>,
+      children:{
+        
+      }
   },
 ]);
 

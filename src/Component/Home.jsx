@@ -2,6 +2,8 @@ import React from 'react';
 import { useLoaderData } from 'react-router';
 import HobbyCard from './HobbyCard';
 import BannerSlider from './BannerSlider';
+import OfferSection from './OfferSection';
+import Testimonials from './Testimonial';
 
 const Home = () => {
     const data=useLoaderData();
@@ -15,6 +17,8 @@ const Home = () => {
                     data.map(hobby=><HobbyCard key={hobby._id} hobby={hobby}></HobbyCard>)
                 }
             </div>
+            <OfferSection></OfferSection>
+            <Testimonials></Testimonials>
         </div>
     );
 };

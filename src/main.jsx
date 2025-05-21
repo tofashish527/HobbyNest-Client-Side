@@ -12,6 +12,8 @@ import Allgroups from './Pages/Allgroups';
 import Creategroups from './Pages/Creategroups';
 import Mygroups from './Pages/Mygroups';
 import Error from './Component/Error';
+import UpdateGroup from './Pages/UpdateGroup';
+import HobbyDetails from './Pages/HobbyDetails';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -32,6 +34,16 @@ const router = createBrowserRouter([
           path:'/creategroups',
           Component:Creategroups,
         },
+         {
+        path:'/hobbys/:id',
+        loader:({params})=>fetch(`http://localhost:3000/hobbys/${params.id}`),
+        Component:HobbyDetails,
+      },
+      {
+        path:'/updategroup/:id',
+        loader:({params})=>fetch(`http://localhost:3000/hobbys/${params.id}`),
+        Component:UpdateGroup,
+      },
         {
           path:'/mygroups',
           Component:Mygroups,

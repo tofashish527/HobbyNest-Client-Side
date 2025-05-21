@@ -11,11 +11,12 @@ import Home from './Component/Home';
 import Allgroups from './Pages/Allgroups';
 import Creategroups from './Pages/Creategroups';
 import Mygroups from './Pages/Mygroups';
+import Error from './Component/Error';
 const router = createBrowserRouter([
   {
     path: "/",
     Component:Mainlayout,
-    errorElement:<h1>Error Occured! :( </h1>,
+    errorElement:<Error></Error>,
       children:[
         {
           path:'/',

@@ -20,7 +20,22 @@ const HobbyCard = ({hobby}) => {
             <p className='text-lime-700'>Join before it's too late to cherish your hobbys!!</p>
              </div>
 		</div>
-		<button type="button" className="flex border-gray-300 border-2 items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:bg-violet-600 dark:text-gray-50" fdprocessedid="9gwrgp">Explore more</button>
+         {/* <div className="card-actions justify-end">
+        <div className="join join-vertical space-y-3 mb-3">
+  <Link to={`/coffee/${_id}`}>
+  <button className="btn join-item">View</button>
+  </Link>
+  <Link to={`/updatecoffee/${_id}`}>
+  <button className="btn join-item">Edit</button>
+  </Link>
+  <button onClick={()=>handleDelete(_id)} className="btn join-item">X</button>
+</div>
+    </div> */}
+    <div className='flex justify-between'>
+        <button className="btn join-item  border-gray-400 border-2 rounded-2xl">Update Info.</button>
+    <button  className="btn join-item  border-gray-400 border-2 rounded-2xl">Remove</button>
+    </div>
+		<button type="button" className="flex border-gray-400 border-2 items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:bg-violet-600 dark:text-gray-50" fdprocessedid="9gwrgp">Explore more</button>
 	</div>
    
 </div>

@@ -15,10 +15,11 @@ const router = createBrowserRouter([
   {
     path: "/",
     Component:Mainlayout,
-    errorElement:<h1>Error Occured! :(</h1>,
+    errorElement:<h1>Error Occured! :( </h1>,
       children:[
         {
           path:'/',
+          loader:()=>fetch('http://localhost:3000/hobbys'),
           Component:Home,
           index:true,
         },

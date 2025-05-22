@@ -14,6 +14,9 @@ import Mygroups from './Pages/Mygroups';
 import Error from './Component/Error';
 import UpdateGroup from './Pages/UpdateGroup';
 import HobbyDetails from './Pages/HobbyDetails';
+import Login from './Component/Login';
+import Register from './Component/Register';
+import Spinner from './Component/Spinner';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -23,6 +26,7 @@ const router = createBrowserRouter([
         {
           path:'/',
           loader:()=>fetch('http://localhost:3000/hobbys'),
+           hydrateFallbackElement:<Spinner></Spinner>,
           Component:Home,
           index:true,
         },
@@ -30,6 +34,7 @@ const router = createBrowserRouter([
           path:'/allgroups',
           Component:Allgroups,
            loader: async () => fetch('http://localhost:3000/hobbys'),
+            hydrateFallbackElement:<Spinner></Spinner>,
         },
         {
           path:'/creategroups',
@@ -38,17 +43,29 @@ const router = createBrowserRouter([
          {
         path:'/hobbys/:id',
         loader:({params})=>fetch(`http://localhost:3000/hobbys/${params.id}`),
+         hydrateFallbackElement:<Spinner></Spinner>,
         Component:HobbyDetails,
       },
       {
         path:'/updategroup/:id',
         loader:({params})=>fetch(`http://localhost:3000/hobbys/${params.id}`),
+        hydrateFallbackElement:<Spinner></Spinner>,
         Component:UpdateGroup,
       },
         {
           path:'/mygroups',
           Component:Mygroups,
         },
+        {
+          path:'/login',
+          Component:Login,
+        },
+        {
+          path:'/register',
+          Component:Register,
+        }
+
+
       ]
   },
 ]);

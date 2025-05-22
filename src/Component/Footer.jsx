@@ -52,7 +52,7 @@ import { NavLink } from 'react-router';
         <footer className="bg-white/90 backdrop-blur-md text-gray-800 pt-10 pb-6">
           <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 border-b border-gray-300 pb-10">
             <div className="lg:col-span-2">
-              <h1 className="text-3xl font-bold text-blue-900 mb-3">HobbyTribe</h1>
+              <h1 className="text-3xl font-bold text-blue-900 mb-3">HobbyNest</h1>
               <p className="text-gray-700 mb-4">Whether artistic or analytical, hobbies offer a constructive outlet that nurtures both mental clarity and personal fulfillment.</p>
               <div className="flex space-x-4 text-lg text-blue-900">
                 <FaFacebookF className="hover:text-blue-600 cursor-pointer" />
@@ -97,7 +97,7 @@ import { NavLink } from 'react-router';
           </div>
   
           <div className="max-w-7xl mx-auto px-6 mt-6 text-center text-sm text-gray-700">
-            <div className="mb-2">© 2025 HobbyTribe | Powered by Tofashish Nujum</div>
+            <div className="mb-2">© 2025 HobbyNest | Powered by Tofashish Nujum</div>
             <div className="flex flex-wrap justify-center space-x-4">
               <a href="#" className="hover:text-blue-600 cursor-pointer">Privacy Policy</a>
               <a href="#" className="hover:text-blue-600 cursor-pointer">Terms & Conditions</a>

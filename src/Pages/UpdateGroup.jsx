@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLoaderData } from 'react-router';
+import { toast, ToastContainer } from 'react-toastify';
 import Swal from 'sweetalert2';
 
 const UpdateGroup = () => {
@@ -23,18 +24,19 @@ const UpdateGroup = () => {
                     .then(data => {
                         // console.log("after adding coffee to db",data);
                         if (data.modifiedCount) {
-                            Swal.fire({
-                                title: "Group Info. Updated Successfully!",
-                                icon: "success",
-                                draggable: true
-                            });
+                            // Swal.fire({
+                            //     title: "Group Info. Updated Successfully!",
+                            //     icon: "success",
+                            //     draggable: true
+                            // });
+                            toast.success("Group Info. Updated Successfully!")
                         }
                     })
     }
     return (
         <div>
             <div className="max-w-3xl mx-auto bg-pink-100 shadow-xl rounded-2xl p-6 sm:p-8 mt-6 sm:mt-10 w-full">
-  <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-center text-black">Update Your Hobby Group</h2>
+  <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-center text-black">Update Your Group Info.</h2>
   <form onSubmit={handleUpdate} className="space-y-4">
  
     <div>
@@ -152,6 +154,7 @@ const UpdateGroup = () => {
       >
         Update Group
       </button>
+      <ToastContainer></ToastContainer>
     </div>
   </form>
 </div>

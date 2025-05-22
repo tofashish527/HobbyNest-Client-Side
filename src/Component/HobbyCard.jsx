@@ -4,6 +4,21 @@ import { Link } from 'react-router';
 import Swal from 'sweetalert2';
 
 const HobbyCard = ({hobby}) => {
+
+    //  const [displayhob,setDisplayhob]
+    // =useState([])
+    // const [showAll,setShowAll]=useState(false)
+    // useEffect(()=>{
+    //     if(showAll){
+    //         setDisplayhob(hobby)
+    //     }
+    //     else{
+    //         setDisplayhob(hobby.slice(0,6))
+    //     }
+    // },[hobby,showAll])
+    // useEffect(()=>{
+    //     setDisplayhob(hobby.slice(0, 6))
+    // },[])
     
     const {_id,imageUrl,startDate,groupName,description}=hobby;
 
@@ -54,7 +69,7 @@ const HobbyCard = ({hobby}) => {
 			<p className="dark:text-gray-800">{description}</p>
             <div className='flex'>
              <p className='text-red-900 font-bold text-xl'>Journey Starts From</p>
-             <button className=' ml-15 text-sm p-2 rounded-4xl border border-cyan-950 text-cyan-700'> {startDate}</button>
+             <button className=' ml-20 text-sm p-2 rounded-4xl border border-cyan-950 text-cyan-700'> {startDate}</button>
             
             </div>
              <div className='flex'>
@@ -80,7 +95,7 @@ const HobbyCard = ({hobby}) => {
     <button onClick={()=>handleDelete(_id)} className="btn join-item  border-gray-400 border-2 rounded-2xl">Remove</button>
     </div>
     <Link to={`/hobbys/${_id}`}>
-		<button type="button" className="flex border-gray-400 border-2 items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:bg-violet-600 dark:text-gray-50" fdprocessedid="9gwrgp">Explore more</button>
+		<button type="button" className="flex border-gray-400 border-2 items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:bg-violet-600 dark:text-gray-50" fdprocessedid="9gwrgp">See more</button>
     </Link>
 	</div>
    

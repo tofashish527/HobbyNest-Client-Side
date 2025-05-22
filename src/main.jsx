@@ -29,6 +29,7 @@ const router = createBrowserRouter([
         {
           path:'/allgroups',
           Component:Allgroups,
+           loader: async () => fetch('http://localhost:3000/hobbys'),
         },
         {
           path:'/creategroups',

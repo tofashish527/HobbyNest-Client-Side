@@ -3,14 +3,12 @@ import { useLoaderData } from 'react-router';
 
 const HobbyDetails = () => {
     const data=useLoaderData()
-    //const {id}=useParams()
-    //const singledoc=data.find(sdoc=>sdoc._id==(id))
-    const {_id,imageUrl,startDate,groupName,description}=data;
+    const {imageUrl,startDate,groupName,description,maxMembers,location,category}=data;
     return (
         <div className='p-1'>
-            <div className='text-center mt-3 mb-3 bg-white p-5 rounded-xl'>
-                <h1 className='text-3xl font-bold mt-2 mb-2'>Doctor's Profile Details</h1>
-                <p className='text-sm mb-5 mt-1'>Health is not just about what you'r eating.It's also about what you'r thinking,saying and doing.A peaceful mind leads<br></br> to a healthy body.</p>
+            <div className='text-center mt-2 mb-3 bg-white p-5 rounded-xl'>
+                <h1 className='text-4xl font-bold mt-1 mb-2'>Our Hobby Group Details</h1>
+                <p className='text-sm mb-5 mt-1'> Hobbies are the heartbeat of joy — small moments where passion meets peace.Whether it's creating, exploring, or learning, your hobby is your happy place.</p>
             </div>
             <div className='flex gap-10 mt-3 mb-3 bg-white p-10 rounded-xl'>
                 <div className="p-5 flex justify-center items-center bg-gray-100 w-[400px]">
@@ -21,9 +19,13 @@ const HobbyDetails = () => {
                     />
                 </div>
                 <div>
-                    <h1 className='text-4xl font-bold mt-4 mb-15'>{groupName}</h1>
+                    <h1 className='text-2xl font-bold mt-4 mb-10'>{groupName}</h1>
+                    <p className='text-sm mt-4 mb-1'>Category : {category}</p>
                     <p className='text-sm mt-4 mb-1'>{description}</p>
-                    <p className='text-sm mt-4 mb-1'>{startDate}</p>
+                    <p className='text-sm mt-4 mb-1'>Members : {maxMembers}</p>
+                    <p className='text-sm mt-4 mb-1'>Location : {location}</p>
+                    <p className='text-sm mt-4 mb-1'>Journey Will be Start From : {startDate}</p>
+                    <button className='btn px-6 py-2 mt-5 bg-cyan-800 text-white rounded-md hover:bg-cyan-600'>Join Group</button>
                 </div>
             </div>
         </div>

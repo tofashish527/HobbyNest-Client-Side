@@ -4,22 +4,6 @@ import { Link } from 'react-router';
 import Swal from 'sweetalert2';
 
 const HobbyCard = ({hobby}) => {
-
-    //  const [displayhob,setDisplayhob]
-    // =useState([])
-    // const [showAll,setShowAll]=useState(false)
-    // useEffect(()=>{
-    //     if(showAll){
-    //         setDisplayhob(hobby)
-    //     }
-    //     else{
-    //         setDisplayhob(hobby.slice(0,6))
-    //     }
-    // },[hobby,showAll])
-    // useEffect(()=>{
-    //     setDisplayhob(hobby.slice(0, 6))
-    // },[])
-    
     const {_id,imageUrl,startDate,groupName,description}=hobby;
 
     const handleDelete=(_id)=>{
@@ -77,17 +61,6 @@ const HobbyCard = ({hobby}) => {
             <p className='text-lime-700'>Join before it's too late to cherish your hobbys!!</p>
              </div>
 		</div>
-         {/* <div className="card-actions justify-end">
-        <div className="join join-vertical space-y-3 mb-3">
-  <Link to={`/coffee/${_id}`}>
-  <button className="btn join-item">View</button>
-  </Link>
-  <Link to={`/updatecoffee/${_id}`}>
-  <button className="btn join-item">Edit</button>
-  </Link>
-  <button onClick={()=>handleDelete(_id)} className="btn join-item">X</button>
-</div>
-    </div> */}
     <div className='flex justify-between'>
         <Link to={`/updategroup/${_id}`}>
         <button className="btn join-item  border-gray-400 border-2 rounded-2xl">Update Info.</button>

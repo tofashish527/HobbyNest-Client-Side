@@ -6,13 +6,6 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-//   apiKey: "AIzaSyDpfcbdCxNhDdt9P7588Z789FMF8dxyes8",
-//   authDomain: "hobby-tribe-355ca.firebaseapp.com",
-//   projectId: "hobby-tribe-355ca",
-//   storageBucket: "hobby-tribe-355ca.firebasestorage.app",
-//   messagingSenderId: "550908571012",
-//   appId: "1:550908571012:web:7b51c77f11e36864edc1d1"
-
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
   projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,

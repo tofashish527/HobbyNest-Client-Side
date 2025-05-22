@@ -1,4 +1,3 @@
-import React from 'react';
 import Swal from 'sweetalert2';
 
 const Creategroups = () => {
@@ -10,7 +9,7 @@ const Creategroups = () => {
         const newhobby=Object.fromEntries(formData.entries());
         console.log(newhobby);
 
-        // send coffeedata to db
+        // send hobbydata to db
         fetch('http://localhost:3000/hobbys', {
             method: 'POST',
             headers: {

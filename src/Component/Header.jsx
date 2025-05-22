@@ -59,6 +59,7 @@ const Header = () => {
       </div>
 
       <div className="navbar-end flex items-center gap-4">
+        <Link to="/login" className="btn bg-blue-900 text-white px-6">Login</Link>
         {/* {user ? (
           <>
             <div className="relative group flex items-center gap-2">

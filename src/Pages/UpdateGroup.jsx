@@ -1,7 +1,5 @@
-import React from 'react';
 import { useLoaderData } from 'react-router';
 import { toast, ToastContainer } from 'react-toastify';
-import Swal from 'sweetalert2';
 
 const UpdateGroup = () => {
      const {_id,imageUrl,startDate,maxMembers,category,groupName,description,location}=useLoaderData()
@@ -36,7 +34,7 @@ const UpdateGroup = () => {
     return (
         <div>
             <div className="max-w-3xl mx-auto bg-pink-100 shadow-xl rounded-2xl p-6 sm:p-8 mt-6 sm:mt-10 w-full">
-  <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-center text-black">Update Your Group Info.</h2>
+  <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-center text-black">Update Group Info.</h2>
   <form onSubmit={handleUpdate} className="space-y-4">
  
     <div>

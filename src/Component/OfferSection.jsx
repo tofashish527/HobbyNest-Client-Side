@@ -44,5 +44,3 @@ Surround yourself with passion, explore your spark, and let your hobbies become 
 };
 
 export default OfferSection;
-
-//src="https://i.postimg.cc/DykmV4qL/pexels-photo-6860397.jpg"

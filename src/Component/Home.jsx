@@ -14,7 +14,7 @@ const Home = () => {
         <div className='mt-5 mb-5 '>
             <BannerSlider></BannerSlider>
             <h2 className='text-center text-3xl font-bold mb-5 mt-3'>Our Popular Groups</h2>
-            <div className='max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-5'>
+            <div className='max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
                 {
                     topHobbies.map(hobby=><HobbyCard key={hobby._id} hobby={hobby}></HobbyCard>)
                 }

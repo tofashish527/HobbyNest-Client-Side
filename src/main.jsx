@@ -17,6 +17,7 @@ import HobbyDetails from './Pages/HobbyDetails';
 import Login from './Component/Login';
 import Register from './Component/Register';
 import Spinner from './Component/Spinner';
+import AuthProvider from './Context/AuthProvider';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -72,6 +73,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+     <RouterProvider router={router} />
+    </AuthProvider>
   </StrictMode>,
 )

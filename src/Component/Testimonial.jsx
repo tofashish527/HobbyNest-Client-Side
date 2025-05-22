@@ -1,19 +1,4 @@
-// import React from 'react';
 
-// const Testimonial 
-
-// = () => {
-//     return (
-//         <div>
-            
-//         </div>
-//     );
-// };
-
-// export default Testimonial;
-
-
-// Component/Testimonials.jsx
 import { Slide } from 'react-awesome-reveal';
 
 const testimonials = [

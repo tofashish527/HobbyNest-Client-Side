@@ -1,4 +1,3 @@
-import React from 'react';
 import { useLoaderData } from 'react-router';
 
 const HobbyDetails = () => {
@@ -10,7 +9,7 @@ const HobbyDetails = () => {
                 <h1 className='text-4xl font-bold mt-1 mb-2'>Our Hobby Group Details</h1>
                 <p className='text-sm mb-5 mt-1'> Hobbies are the heartbeat of joy — small moments where passion meets peace.Whether it's creating, exploring, or learning, your hobby is your happy place.</p>
             </div>
-            <div className='flex gap-10 mt-3 mb-3 bg-white p-10 rounded-xl'>
+            <div className='flex lg:flex-row md:flex-row flex-col gap-10 mt-3 mb-3 bg-white p-10 rounded-xl'>
                 <div className="p-5 flex justify-center items-center bg-gray-100 w-[400px]">
                     <img
                         src={imageUrl}

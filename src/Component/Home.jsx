@@ -4,6 +4,7 @@ import HobbyCard from './HobbyCard';
 import BannerSlider from './BannerSlider';
 import OfferSection from './OfferSection';
 import Testimonials from './Testimonial';
+import { ToastContainer } from 'react-toastify';
 const Home = () => {
     
     const data=useLoaderData();
@@ -28,6 +29,7 @@ const Home = () => {
             </div>
             <OfferSection></OfferSection>
             <Testimonials></Testimonials>
+             <ToastContainer autoClose={4000}/>
         </div>
     );
 };

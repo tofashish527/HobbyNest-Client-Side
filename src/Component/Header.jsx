@@ -2,22 +2,22 @@
 
 //import React, { use } from 'react';
 import { NavLink, Link } from 'react-router';
-// import userIcon from "../assets/user.png";
-//import { Authcontext } from '../Provider/Authprovider';
-// import { toast } from 'react-toastify';
+import { AuthContext } from '../Context/AuthContext';
+import { use } from 'react';
+import { toast, ToastContainer } from 'react-toastify';
 
 const Header = () => {
- // const { user, logout } = use(Authcontext);
+ const { user, logout } = use(AuthContext);
 
-//   const handleLogout = () => {
-//     logout()
-//       .then(() => {
-//        // toast.success("You Have Logged Out")
-//       })
-//       .catch(() => {
-//       // toast.error("Please Try Again");
-//       });
-//   };
+  const handleLogout = () => {
+    logout()
+      .then(() => {
+       toast.success("You Have Logged Out")
+      })
+      .catch(() => {
+      toast.error("Please Try Again");
+      });
+  };
 
   const links = (
     <>
@@ -58,26 +58,33 @@ const Header = () => {
         </ul>
       </div>
 
-      <div className="navbar-end flex items-center gap-4">
-        <Link to="/login" className="btn bg-blue-900 text-white px-6">Login</Link>
-        {/* {user ? (
+       <div className="navbar-end flex items-center gap-4">
+        {user ? (
           <>
-            <div className="relative group flex items-center gap-2">
-              <img
-                src=''
-                alt="User"
-                className="w-10 h-10 rounded-full border-2 border-violet-600 object-cover"
-              />
-              <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-medium">
-                {user.displayName || "User"}
-              </span>
-            </div>
+            <div className="relative group">
+  <img
+    src={user.photoURL || "https://i.postimg.cc/J4dvR3m7/free-photo-of-dirt-road-in-evergreen-forest.jpg"}
+    alt="User"
+    className="w-10 h-10 rounded-full border-2 border-violet-600 object-cover"
+  />
+  {/* <span className="absolute top-full left-1/2 -translate-x-1/2 mt-1 px-2 py-1 bg-white text-gray-800 text-sm rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10">
+    {user.displayName || "Anonymous"}
+  </span> */}
+  {user?.displayName && (
+  <div className="absolute left-1/2 transform -translate-x-1/2 top-full mt-2 px-3 py-1 bg-gray-400 border-gray-300 text-gray-900 text-xl font-bold rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50 whitespace-nowrap">
+    {user.displayName}
+  </div>
+)}
+
+</div>
+
             <button onClick={handleLogout} className="btn bg-blue-900 text-white px-6">Logout</button>
           </>
         ) : (
-          <Link to="/auth/login" className="btn bg-blue-900 text-white px-6">Login</Link>
-        )} */}
+          <Link to="/login" className="btn bg-blue-900 text-white px-6">Login</Link>
+        )}
       </div>
+
     </div>
   );
 };

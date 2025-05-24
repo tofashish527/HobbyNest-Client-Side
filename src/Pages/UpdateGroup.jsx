@@ -20,7 +20,6 @@ const UpdateGroup = () => {
                 })
                     .then(res => res.json())
                     .then(data => {
-                        // console.log("after adding coffee to db",data);
                         if (data.modifiedCount) {
                             // Swal.fire({
                             //     title: "Group Info. Updated Successfully!",

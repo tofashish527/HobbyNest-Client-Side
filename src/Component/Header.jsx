@@ -1,13 +1,9 @@
-
-
-//import React, { use } from 'react';
 import { NavLink, Link } from 'react-router';
 import { AuthContext } from '../Context/AuthContext';
-import { use } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
-import { TbSun } from 'react-icons/tb';
-import { FaMoon } from 'react-icons/fa';
+import { use } from 'react';
 const Header = () => {
+
  const { user, logout } = use(AuthContext);
 
   const handleLogout = () => {
@@ -68,9 +64,6 @@ const Header = () => {
     alt="User"
     className="w-10 h-10 rounded-full border-2 border-violet-600 object-cover"
   />
-  {/* <span className="absolute top-full left-1/2 -translate-x-1/2 mt-1 px-2 py-1 bg-white text-gray-800 text-sm rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10">
-    {user.displayName || "Anonymous"}
-  </span> */}
   {user?.displayName && (
   <div className="absolute left-1/2 transform -translate-x-1/2 top-full mt-2 px-3 py-1 bg-gray-400 border-gray-300 text-gray-900 text-xl font-bold rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50 whitespace-nowrap">
     {user.displayName}
@@ -90,4 +83,3 @@ const Header = () => {
 };
 
 export default Header;
-//{user.photoURL || Usericon}

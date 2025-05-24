@@ -6,7 +6,7 @@ import "swiper/css";
 const BannerSlider = () => {
   return (
     <div
-      className="w-full h-[600px] px-4 py-12 bg-cover bg-center bg-no-repeat"
+      className="w-full h-[600px] px-4 py-12 bg-cover bg-center bg-no-repeat "
       style={{
         backgroundImage:
           "url('https://i.postimg.cc/xTLrBYWC/white-abstract-background-23-2148810113.jpg')", 

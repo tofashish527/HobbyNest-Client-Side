@@ -30,30 +30,6 @@ const UpdateMyGroup = () => {
   };
 
   return (
-    // <div className="max-w-3xl mx-auto p-6 rounded shadow bg-pink-100 mt-10">
-    //   <h2 className="text-3xl font-bold mb-6 text-center text-black">Update My Group</h2>
-    //   <form onSubmit={handleUpdate} className="space-y-4">
-    //     {/* your full form here, pre-filled using defaultValue like before */}
-    //     <div>
-    //       <label className="font-semibold">Group Name</label>
-    //       <input
-    //         type="text"
-    //         name="groupName"
-    //         defaultValue={groupName}
-    //         required
-    //         className="w-full mt-1 p-2 border rounded"
-    //       />
-    //     </div>
-    //     {/* repeat for all fields like category, maxMembers, startDate, etc. */}
-    //     <button
-    //       type="submit"
-    //       className="mt-4 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-800"
-    //     >
-    //       Update Group
-    //     </button>
-    //     <ToastContainer />
-    //   </form>
-    // </div>
     <div>
             <div className="max-w-3xl mx-auto bg-pink-100 shadow-xl rounded-2xl p-6 sm:p-8 mt-6 sm:mt-10 w-full">
   <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-center text-black">Update Group Info.</h2>

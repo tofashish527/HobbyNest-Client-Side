@@ -42,9 +42,6 @@ const Mygroups = () => {
         text: "Your coffee has been deleted.",
         icon: "success"
       });
-      //remove from state
-      // const remainingcoffees=coffees.filter(cof=>cof._id!==_id)
-      // setCoffees(remainingcoffees)
           }
       })
     }

@@ -58,6 +58,7 @@ const router = createBrowserRouter([
       {
   path: "/mygroups/update/:id",
   element: <UpdateMyGroup />,
+  hydrateFallbackElement:<Spinner></Spinner>,
   loader: ({ params }) =>
     fetch(`http://localhost:3000/hobbys/${params.id}`)
 },

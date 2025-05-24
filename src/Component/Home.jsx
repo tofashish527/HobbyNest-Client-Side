@@ -12,7 +12,7 @@ const Home = () => {
     const topHobbies = Array.isArray(data) ? data.slice(2, 8) : [];
 
     return (
-        <div className='mt-5 mb-5 '>
+        <div className='mt-5 mb-5  '>
             <BannerSlider></BannerSlider>
             <h2 className='text-center text-3xl font-bold mb-5 mt-3'>Our Popular Groups</h2>
             <div className='max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>

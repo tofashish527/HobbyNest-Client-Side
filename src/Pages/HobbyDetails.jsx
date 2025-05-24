@@ -3,6 +3,11 @@ import { useLoaderData } from 'react-router';
 const HobbyDetails = () => {
     const data=useLoaderData()
     const {imageUrl,startDate,groupName,description,maxMembers,location,category}=data;
+
+      const today = new Date();
+    const groupStartDate = new Date(startDate);
+    const isGroupExpired = groupStartDate < today;
+
     return (
         <div className='p-1'>
             <div className='text-center mt-2 mb-3 bg-white p-5 rounded-xl'>
@@ -24,7 +29,18 @@ const HobbyDetails = () => {
                     <p className='text-sm mt-4 mb-1'>Members : {maxMembers}</p>
                     <p className='text-sm mt-4 mb-1'>Location : {location}</p>
                     <p className='text-sm mt-4 mb-1'>Journey Will be Start From : {startDate}</p>
-                    <button className='btn px-6 py-2 mt-5 bg-cyan-800 text-white rounded-md hover:bg-cyan-600'>Join Group</button>
+
+                    
+                    {isGroupExpired ? (
+                        <p className='mt-5 text-red-600 font-semibold text-lg'>
+                            This group is no longer active.
+                        </p>
+                    ) : (
+                        <button className='btn px-6 py-2 mt-5 bg-cyan-800 text-white rounded-md hover:bg-cyan-600'>
+                            Join Group
+                        </button>
+                    )}
+                    {/* <button className='btn px-6 py-2 mt-5 bg-cyan-800 text-white rounded-md hover:bg-cyan-600'>Join Group</button> */}
                 </div>
             </div>
         </div>

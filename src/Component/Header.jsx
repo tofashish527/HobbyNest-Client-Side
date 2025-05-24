@@ -5,7 +5,8 @@ import { NavLink, Link } from 'react-router';
 import { AuthContext } from '../Context/AuthContext';
 import { use } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
-
+import { TbSun } from 'react-icons/tb';
+import { FaMoon } from 'react-icons/fa';
 const Header = () => {
  const { user, logout } = use(AuthContext);
 
@@ -84,7 +85,6 @@ const Header = () => {
           <Link to="/login" className="btn bg-blue-900 text-white px-6">Login</Link>
         )}
       </div>
-
     </div>
   );
 };

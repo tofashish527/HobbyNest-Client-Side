@@ -18,6 +18,8 @@ import Login from './Component/Login';
 import Register from './Component/Register';
 import Spinner from './Component/Spinner';
 import AuthProvider from './Context/AuthProvider';
+import PrivateRoute from './Context/PrivateRoute';
+import UpdateMyGroup from './Pages/UpdateMyGroup';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -39,23 +41,30 @@ const router = createBrowserRouter([
         },
         {
           path:'/creategroups',
-          Component:Creategroups,
+          element:<PrivateRoute><Creategroups></Creategroups></PrivateRoute>,
         },
          {
         path:'/hobbys/:id',
         loader:({params})=>fetch(`http://localhost:3000/hobbys/${params.id}`),
          hydrateFallbackElement:<Spinner></Spinner>,
-        Component:HobbyDetails,
+        element:<PrivateRoute><HobbyDetails></HobbyDetails></PrivateRoute>,
       },
       {
         path:'/updategroup/:id',
         loader:({params})=>fetch(`http://localhost:3000/hobbys/${params.id}`),
         hydrateFallbackElement:<Spinner></Spinner>,
-        Component:UpdateGroup,
+        element:<PrivateRoute><UpdateGroup></UpdateGroup></PrivateRoute>,
       },
+      {
+  path: "/mygroups/update/:id",
+  element: <UpdateMyGroup />,
+  loader: ({ params }) =>
+    fetch(`http://localhost:3000/hobbys/${params.id}`)
+},
+
         {
           path:'/mygroups',
-          Component:Mygroups,
+          element:<PrivateRoute><Mygroups></Mygroups></PrivateRoute>,
         },
         {
           path:'/login',

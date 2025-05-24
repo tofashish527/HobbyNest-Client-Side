@@ -63,12 +63,12 @@ const HobbyCard = ({hobby}) => {
 		</div>
     <div className='flex justify-between'>
         <Link to={`/updategroup/${_id}`}>
-        <button className="btn join-item  border-gray-400 border-2 rounded-2xl">Update Info.</button>
+        <button className="btn join-item hover:bg-fuchsia-300 hover:border-white  border-gray-400 border-2 rounded-2xl">Update Info.</button>
         </Link>
-    <button onClick={()=>handleDelete(_id)} className="btn join-item  border-gray-400 border-2 rounded-2xl">Remove</button>
+    <button onClick={()=>handleDelete(_id)} className="btn join-item  hover:bg-fuchsia-300 hover:border-white border-gray-400 border-2 rounded-2xl">Remove</button>
     </div>
     <Link to={`/hobbys/${_id}`}>
-		<button type="button" className="flex border-gray-400 border-2 items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:bg-violet-600 dark:text-gray-50" fdprocessedid="9gwrgp">See more</button>
+		<button type="button" className="flex border-gray-400 border-2  hover:bg-fuchsia-300 hover:border-white items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:bg-violet-600 dark:text-gray-50" fdprocessedid="9gwrgp">See more</button>
     </Link>
 	</div>
    

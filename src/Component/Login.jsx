@@ -9,6 +9,8 @@ const Login = () => {
     const [success,setSuccess]=useState(false);
     const [errormessage,setErrormessage]=useState('')
     const location=useLocation();
+	//const from = location.state?.from || '/';
+	const from = location.state?.from?.pathname || '/';
     const navigate=useNavigate();
     const emailRef=useRef();
     const handleLogin=(e)=>{
@@ -24,7 +26,8 @@ const Login = () => {
             setUser(user)
             toast.success("Login Successful")
             
-            setTimeout(() =>navigate(`${location.state? location.state : '/'}`), 100);
+            //setTimeout(() =>navigate(`${location.state? location.state : '/'}`,{ replace: true }), 100);
+			setTimeout(() =>navigate(from,{ replace: true }), 100);
         })
         .catch(()=>{
             //const errormessage=error.errormessage;
@@ -47,7 +50,7 @@ const Login = () => {
 
   
     return (
-        <div className="w-full max-w-md mx-auto p-4 rounded-md shadow sm:p-8 bg-cyan-50 dark:bg-gray-50 dark:text-gray-800">
+        <div className="w-full max-w-md mx-auto p-4 rounded-md shadow sm:p-8 bg-fuchsia-200 dark:bg-gray-50 dark:text-gray-800">
          
 	<h2 className="mb-3 text-3xl font-semibold text-center">Login to your account</h2>
     <p>New To Our Website? Please <Link className='text-xl text-blue-700 underline' to='/register'>Register</Link></p>

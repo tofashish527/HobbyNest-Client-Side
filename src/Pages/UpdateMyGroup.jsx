@@ -1,72 +1,70 @@
-import { useContext } from 'react';
-import Swal from 'sweetalert2';
-import { AuthContext } from '../Context/AuthContext';
+import { useLoaderData, useNavigate } from 'react-router';
+import { toast, ToastContainer } from 'react-toastify';
 
-const Creategroups = () => {
-   const { user } = useContext(AuthContext);
+const UpdateMyGroup = () => {
+  const {
+    _id, imageUrl, startDate, maxMembers, category,
+    groupName, description, location
+  } = useLoaderData();
 
-  const handleCreate = e => {
+  const navigate = useNavigate();
+
+  const handleUpdate = (e) => {
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
-    const newGroup = Object.fromEntries(formData.entries());
+    const updatedGroup = Object.fromEntries(formData.entries());
 
-    // Attach user details
-    newGroup.userEmail = user?.email;
-    newGroup.userName = user?.displayName;
-
-    fetch('http://localhost:3000/hobbys', {
-      method: 'POST',
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify(newGroup),
+    fetch(`http://localhost:3000/hobbys/${_id}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(updatedGroup)
     })
       .then(res => res.json())
       .then(data => {
-        if (data.insertedId) {
-          Swal.fire({ title: "Group Created Successfully!", icon: "success" });
-          form.reset();
+        if (data.modifiedCount) {
+          toast.success("Group Info Updated!");
+          setTimeout(() => navigate('/mygroups'), 1500); // go back to My Groups
         }
       });
-  // };
-  //   const handleCreate=e=>{
-  //       e.preventDefault();
-  //       const form=e.target;
+  };
 
-  //       const formData = new FormData(form);
-  //       const newhobby=Object.fromEntries(formData.entries());
-  //       console.log(newhobby);
-
-
-  //       // send hobbydata to db
-  //       fetch('http://localhost:3000/hobbys', {
-  //           method: 'POST',
-  //           headers: {
-  //               'content-type': 'application/json'
-  //           },
-  //           body: JSON.stringify(newhobby)
-  //       })
-  //           .then(res => res.json())
-  //           .then(data => {
-  //               // console.log("after adding hobby groubp to db",data);
-  //               if (data.insertedId) {
-  //                   Swal.fire({
-  //                       title: "Group Created Successfully!",
-  //                       icon: "success",
-  //                       draggable: true
-  //                   });
-  //               }
-  //           })
-    }
-    return (
-    <div className="max-w-3xl mx-auto bg-pink-100 shadow-xl rounded-2xl p-6 sm:p-8 mt-6 sm:mt-10 w-full">
-  <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-center text-black">Create a Hobby Group</h2>
-  <form onSubmit={handleCreate} className="space-y-4">
+  return (
+    // <div className="max-w-3xl mx-auto p-6 rounded shadow bg-pink-100 mt-10">
+    //   <h2 className="text-3xl font-bold mb-6 text-center text-black">Update My Group</h2>
+    //   <form onSubmit={handleUpdate} className="space-y-4">
+    //     {/* your full form here, pre-filled using defaultValue like before */}
+    //     <div>
+    //       <label className="font-semibold">Group Name</label>
+    //       <input
+    //         type="text"
+    //         name="groupName"
+    //         defaultValue={groupName}
+    //         required
+    //         className="w-full mt-1 p-2 border rounded"
+    //       />
+    //     </div>
+    //     {/* repeat for all fields like category, maxMembers, startDate, etc. */}
+    //     <button
+    //       type="submit"
+    //       className="mt-4 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-800"
+    //     >
+    //       Update Group
+    //     </button>
+    //     <ToastContainer />
+    //   </form>
+    // </div>
+    <div>
+            <div className="max-w-3xl mx-auto bg-pink-100 shadow-xl rounded-2xl p-6 sm:p-8 mt-6 sm:mt-10 w-full">
+  <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-center text-black">Update Group Info.</h2>
+  <form onSubmit={handleUpdate} className="space-y-4">
  
     <div>
       <label className="block font-semibold">Group Name</label>
       <input
         type="text"
         name="groupName"
+        defaultValue={groupName}
         className="w-full mt-1 p-2 border rounded-md"
         required
       />
@@ -77,6 +75,7 @@ const Creategroups = () => {
       <label className="block font-semibold">Hobby Category</label>
       <select
         name="category"
+        defaultValue={category}
         className="w-full mt-1 p-2 border rounded-md"
         required
       >
@@ -98,6 +97,7 @@ const Creategroups = () => {
         <input
           type="number"
           name="maxMembers"
+          defaultValue={maxMembers}
           className="w-full mt-1 p-2 border rounded-md"
           min="1"
           required
@@ -108,6 +108,7 @@ const Creategroups = () => {
         <input
           type="date"
           name="startDate"
+          defaultValue={startDate}
           className="w-full mt-1 p-2 border rounded-md"
           required
         />
@@ -120,6 +121,7 @@ const Creategroups = () => {
       <input
         type="text"
         name="location"
+        defaultValue={location}
         className="w-full mt-1 p-2 border rounded-md"
         required
       />
@@ -130,6 +132,7 @@ const Creategroups = () => {
       <input
         type="url"
         name="imageUrl"
+        defaultValue={imageUrl}
         className="w-full mt-1 p-2 border rounded-md"
         required
       />
@@ -157,6 +160,7 @@ const Creategroups = () => {
       <label className="block font-semibold">Description</label>
       <textarea
         name="description"
+        defaultValue={description}
         className="w-full mt-1 p-2 border rounded-md"
         rows="3"
         required
@@ -168,13 +172,14 @@ const Creategroups = () => {
         type="submit"
         className="bg-gray-300 text-black border-2 px-6 py-2 rounded-xl hover:bg-indigo-900 hover:text-white transition w-full sm:w-auto"
       >
-        Create Group
+        Update Group
       </button>
+      <ToastContainer></ToastContainer>
     </div>
   </form>
 </div>
-
-    );
+        </div>
+  );
 };
 
-export default Creategroups;
+export default UpdateMyGroup;

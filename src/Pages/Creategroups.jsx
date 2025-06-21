@@ -15,7 +15,7 @@ const Creategroups = () => {
     newGroup.userEmail = user?.email;
     newGroup.userName = user?.displayName;
 
-    fetch('http://localhost:3000/hobbys', {
+    fetch('https://hobby-tribe-server.vercel.app/hobbys', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(newGroup),
@@ -27,35 +27,6 @@ const Creategroups = () => {
           form.reset();
         }
       });
-  // };
-  //   const handleCreate=e=>{
-  //       e.preventDefault();
-  //       const form=e.target;
-
-  //       const formData = new FormData(form);
-  //       const newhobby=Object.fromEntries(formData.entries());
-  //       console.log(newhobby);
-
-
-  //       // send hobbydata to db
-  //       fetch('http://localhost:3000/hobbys', {
-  //           method: 'POST',
-  //           headers: {
-  //               'content-type': 'application/json'
-  //           },
-  //           body: JSON.stringify(newhobby)
-  //       })
-  //           .then(res => res.json())
-  //           .then(data => {
-  //               // console.log("after adding hobby groubp to db",data);
-  //               if (data.insertedId) {
-  //                   Swal.fire({
-  //                       title: "Group Created Successfully!",
-  //                       icon: "success",
-  //                       draggable: true
-  //                   });
-  //               }
-  //           })
     }
     return (
     <div className="max-w-3xl mx-auto bg-pink-100 shadow-xl rounded-2xl p-6 sm:p-8 mt-6 sm:mt-10 w-full">

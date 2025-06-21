@@ -8,7 +8,7 @@ import { ToastContainer } from 'react-toastify';
 const Home = () => {
     
     const data=useLoaderData();
-    console.log(data);
+    //console.log(data);
     const topHobbies = Array.isArray(data) ? data.slice(2, 8) : [];
 
     return (

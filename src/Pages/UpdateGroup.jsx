@@ -9,9 +9,9 @@ const UpdateGroup = () => {
 
         const formData = new FormData(form);
         const updatedhobby=Object.fromEntries(formData.entries());
-        console.log(updatedhobby);
+        //console.log(updatedhobby);
 
-         fetch(`http://localhost:3000/hobbys/${_id}`, {
+         fetch(`https://hobby-tribe-server.vercel.app/hobbys/${_id}`, {
                     method: 'PUT',
                     headers: {
                         'content-type': 'application/json'

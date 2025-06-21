@@ -27,52 +27,51 @@ const router = createBrowserRouter([
     errorElement:<Error></Error>,
       children:[
         {
-          path:'/',
-          loader:()=>fetch('http://localhost:3000/hobbys'),
+          loader:()=>fetch('https://hobby-tribe-server.vercel.app/hobbys'),
            hydrateFallbackElement:<Spinner></Spinner>,
           Component:Home,
           index:true,
         },
         {
-          path:'/allgroups',
+          path:'allgroups',
           Component:Allgroups,
-           loader: async () => fetch('http://localhost:3000/hobbys'),
+          loader:()=>fetch('https://hobby-tribe-server.vercel.app/hobbys'),
             hydrateFallbackElement:<Spinner></Spinner>,
         },
         {
-          path:'/creategroups',
+          path:'creategroups',
           element:<PrivateRoute><Creategroups></Creategroups></PrivateRoute>,
         },
          {
-        path:'/hobbys/:id',
-        loader:({params})=>fetch(`http://localhost:3000/hobbys/${params.id}`),
+        path:'hobbys/:id',
+        loader:({params})=>fetch(`https://hobby-tribe-server.vercel.app/hobbys/${params.id}`),
          hydrateFallbackElement:<Spinner></Spinner>,
         element:<PrivateRoute><HobbyDetails></HobbyDetails></PrivateRoute>,
       },
       {
-        path:'/updategroup/:id',
-        loader:({params})=>fetch(`http://localhost:3000/hobbys/${params.id}`),
+        path:'updategroup/:id',
+        loader:({params})=>fetch(`https://hobby-tribe-server.vercel.app/hobbys/${params.id}`),
         hydrateFallbackElement:<Spinner></Spinner>,
         element:<PrivateRoute><UpdateGroup></UpdateGroup></PrivateRoute>,
       },
       {
-  path: "/mygroups/update/:id",
+  path: "mygroups/update/:id",
   element: <UpdateMyGroup />,
   hydrateFallbackElement:<Spinner></Spinner>,
   loader: ({ params }) =>
-    fetch(`http://localhost:3000/hobbys/${params.id}`)
+    fetch(`https://hobby-tribe-server.vercel.app/hobbys/${params.id}`)
 },
 
         {
-          path:'/mygroups',
+          path:'mygroups',
           element:<PrivateRoute><Mygroups></Mygroups></PrivateRoute>,
         },
         {
-          path:'/login',
+          path:'login',
           Component:Login,
         },
         {
-          path:'/register',
+          path:'register',
           Component:Register,
         }
 

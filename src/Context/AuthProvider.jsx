@@ -20,7 +20,7 @@ const AuthProvider = ({children}) => {
         const provider = new GoogleAuthProvider();
         return signInWithPopup(auth, provider)
             .then((result) => {
-                console.log("Google Sign-In result:", result.user);
+                //console.log("Google Sign-In result:", result.user);
                 return result;
             });
     };
@@ -33,7 +33,7 @@ const AuthProvider = ({children}) => {
 
     useEffect(() => {
   const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-    console.log("Auth state changed. Current user:", currentUser);
+    //console.log("Auth state changed. Current user:", currentUser);
     setUser(currentUser);
     setLoading(false);
   });

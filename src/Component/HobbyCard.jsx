@@ -7,7 +7,7 @@ const HobbyCard = ({hobby}) => {
     const {_id,imageUrl,startDate,groupName,description}=hobby;
 
     const handleDelete=(_id)=>{
-       console.log(_id);
+      // console.log(_id);
        Swal.fire({
   title: "Are you sure?",
   text: "You won't be able to revert this!",
@@ -20,7 +20,7 @@ const HobbyCard = ({hobby}) => {
   if (result.isConfirmed) {
 
     //delete from db
-    fetch(`http://localhost:3000/hobbys/${_id}`,{
+    fetch(`https://hobby-tribe-server.vercel.app/hobbys/${_id}`,{
         method:'DELETE',
     })
     .then(res=>res.json())

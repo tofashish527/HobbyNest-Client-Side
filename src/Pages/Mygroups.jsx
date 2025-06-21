@@ -10,13 +10,13 @@ const Mygroups = () => {
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:3000/mygroups?email=${user.email}`)
+      fetch(`https://hobby-tribe-server.vercel.app/mygroups?email=${user.email}`)
         .then(res => res.json())
         .then(data => setGroups(data));
     }
   }, [user]);
   const handleDelete=(_id)=>{
-         console.log(_id);
+         //console.log(_id);
          Swal.fire({
     title: "Are you sure?",
     text: "You won't be able to revert this!",
@@ -29,12 +29,12 @@ const Mygroups = () => {
     if (result.isConfirmed) {
   
       //delete from db
-      fetch(`http://localhost:3000/hobbys/${_id}`,{
+      fetch(`https://hobby-tribe-server.vercel.app/hobbys/${_id}`,{
           method:'DELETE',
       })
       .then(res=>res.json())
       .then(data=>{
-          console.log("after delete",data);
+         // console.log("after delete",data);
           if(data.deletedCount)
           {
                  Swal.fire({

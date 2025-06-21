@@ -2,7 +2,7 @@
 
 Welcome to HobbyNest – your go-to platform for discovering, creating, and joining hobby groups based on your interests!
 
-# Live Site URL: 
+# Live Site URL: [https://hobby-tribe-355ca.web.app/]
 
 # Features
 
